@@ -45,9 +45,9 @@ function App() {
   ])
 
   return (
-    <div variant="">
-
-      <RouterProvider router={router}></RouterProvider>
+    <div className="">
+    
+    <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
