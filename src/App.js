@@ -1,5 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
+import LogIn from './components/AccountsDB/LogIn/LogIn';
+import Register from './components/AccountsDB/Register/Register';
 import Main from './components/layout/Main';
 import Blog from './components/Pages/Blog/Blog';
 import Courses from './components/Pages/Courses/Courses';
@@ -29,18 +31,23 @@ function App() {
           path: '/blog',
           element: <Blog></Blog>
         },
-
-        
-
+        {
+          path: '/register',
+          element: <Register></Register>
+        },
+        {
+          path: '/login',
+          element: <LogIn></LogIn>
+        },
       ]
 
     }
   ])
 
   return (
-    <div className="">
-    
-    <RouterProvider router={router}></RouterProvider>
+    <div variant="">
+
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }
