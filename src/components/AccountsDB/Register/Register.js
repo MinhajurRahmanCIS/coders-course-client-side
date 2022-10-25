@@ -11,15 +11,14 @@ const Register = () => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
+        const url = form.url.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, email, password)
+        console.log(name, url, email, password)
 
         if(password.length < 6) {
-            toast.success("Password length Must be 6");
+            toast.warning("Password length Must be 6");
         }
-       
-
     }
     return (
         <div className='container mt-5'>
@@ -29,6 +28,10 @@ const Register = () => {
              <Form.Group className="mb-3" controlId="formBasicName">
                  <Form.Label>Full Name</Form.Label>
                  <Form.Control type="name" name="name" placeholder="Enter name" required/>
+             </Form.Group>
+             <Form.Group className="mb-3" controlId="formBasicURL">
+                 <Form.Label>Picture URL</Form.Label>
+                 <Form.Control type="url" name="url" placeholder="Provide Picture url" required/>
              </Form.Group>
              <Form.Group className="mb-3" controlId="formBasicEmail">
                  <Form.Label>Email</Form.Label>

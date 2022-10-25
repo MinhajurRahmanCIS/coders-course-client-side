@@ -22,6 +22,7 @@ function App() {
         },
         {
           path: '/courses',
+          loader: async () => fetch('http://localhost:5000/coders-courses'),
           element: <Courses></Courses>
         },
         {
