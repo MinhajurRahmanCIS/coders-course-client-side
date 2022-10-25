@@ -8,60 +8,54 @@ const Blog = () => {
         <div className="container">
             <h1 className="text-primary">Blog</h1>
             <div>
-            <Row xs={1} md={2} className="g-3">
+                <Row xs={1} md={2} className="g-3">
                     <Col>
                         <Card>
-                            <Card.Img variant="top" src="holder.js/100px160" />
                             <Card.Body>
-                                <Card.Title>Card title</Card.Title>
+                                <Card.Title>What is cors?</Card.Title>
                                 <Card.Text>
-                                    This is a longer card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit
-                                    longer.
+                                    CORS is a node. js package for providing a Connect/Express middleware that can be used to enable CORS with various options. Its allows a server to indicate any origins other than its own from which a browser should permit loading resources
                                 </Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
                     <Col>
                         <Card>
-                            <Card.Img variant="top" src="holder.js/100px160" />
                             <Card.Body>
-                                <Card.Title>Card title</Card.Title>
+                            <Card.Title>How does the private route work?</Card.Title>
                                 <Card.Text>
-                                    This is a longer card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit
-                                    longer.
+                                    The react private route component renders child components if the user is logged in. If not logged in the user is redirected to the /login page with the return url passed in the location state property.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
                     <Col>
                         <Card>
-                            <Card.Img variant="top" src="holder.js/100px160" />
                             <Card.Body>
-                                <Card.Title>Card title</Card.Title>
+                            <Card.Title> Why are you using firebase? What other options do you have to implement authentication.</Card.Title>
                                 <Card.Text>
-                                    This is a longer card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit
-                                    longer.
+                                    Firebase Authentication provides backend services easy-to-use SDKs and ready made UI libraries to authenticate users. It supports authentication using passwords, popular federated identity providers like Google, gitHub and more.
+                                    Other Options
+                                    <strong>
+                                        • Back4App
+                                        • AWS Amplify
+                                        • Supabase
+                                    </strong>
                                 </Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
                     <Col>
                         <Card>
-                            <Card.Img variant="top" src="holder.js/100px160" />
                             <Card.Body>
-                                <Card.Title>Card title</Card.Title>
+                                <Card.Title> What is Node? How does Node work?</Card.Title>
                                 <Card.Text>
-                                    This is a longer card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit
-                                    longer.
+                                    It is a used as backend service where javascript works on the server-side of the application. This way javascript is used on both frontend and backend. Node. js runs on chrome v8 engine which converts javascript code into machine code, it is highly scalable, lightweight, fast, and data-intensive. Node can be used to write server-side applications with access to the operating system  and system file.
                                 </Card.Text>
                             </Card.Body>
                         </Card>
                     </Col>
-            </Row>
+                </Row>
             </div>
         </div>
     );
