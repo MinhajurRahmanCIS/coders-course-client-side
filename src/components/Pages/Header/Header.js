@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { FaCode } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
+
 const Header = () => {
     return (
         <div className='container'>
@@ -22,7 +23,7 @@ const Header = () => {
                         <Nav>
                             <Link className='nav-link' to='/register'>Register</Link>
                             <Link className='nav-link' to='/login'>LogIn</Link>
-                            <Link className='nav-link text-warning' to='/blog'>Premium</Link>
+                            
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

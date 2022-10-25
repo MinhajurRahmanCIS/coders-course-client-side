@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 const Blog = () => {
     return (
         <div className="container">
-            <h1 className="text-primary">Blog</h1>
+             <h2 className="text-secondary text-center my-3 bg-dark text-white p-2">Blog</h2>
             <div>
                 <Row xs={1} md={2} className="g-3">
                     <Col>

@@ -13,37 +13,33 @@ const Courses = () => {
             <div className="row">
                 <div className="col-2 d-none d-lg-block">
 
-                    <h4 className="my-3 ">Courses List</h4>
+                    <h4 className="my-3 border-bottom me-4">Latest Course!</h4>
                     <ListGroup>
-                        <ListGroup.Item action variant="dark border-white rounded-0">
-                            Dark
-                        </ListGroup.Item>
-                        <ListGroup.Item action variant="dark border-white rounded-0">
-                            Dark
-                        </ListGroup.Item>
-                        <ListGroup.Item action variant="dark border-white rounded-0">
-                            Dark
-                        </ListGroup.Item>
-                        <ListGroup.Item action variant="dark border-white rounded-0">
-                            Dark
-                        </ListGroup.Item>
+                        {
+                            courseInfo.map(info =>
+                                <Link key={info.id} className="text-decoration-none" to={`/coursedetails/${info.id}`}>
+                                    <ListGroup.Item action variant="dark border-white rounded-0 ">{info.title}</ListGroup.Item>
+                                </Link>
+                            )
+                        }
+
                     </ListGroup>
                 </div>
                 <div className="col">
-                    <h1 className="text-secondary">Course!</h1>
+                    <h1 className="text-secondary my-3 bg-dark text-white p-3">Programming Language Course</h1>
                     <Row xs={1} md={3} className="g-4">
                         {
                             courseInfo.map(info => <Col key={info.id}>
-                                <Card>
+                                <Card className="bg-light">
                                     <Card.Img variant="top" src={info.picture} style={{ height: "250px" }} />
-                                    <Card.Body>
+                                    <Card.Body className="border-top-dark border">
                                         <Card.Title>{info.title}</Card.Title>
                                         <Card.Text>
                                             <strong>For:</strong> {info.level}
                                             <br />
                                             <strong>Duration:</strong> {info.duration}
                                         </Card.Text>
-                                        <Link to={`/coursedetails/${info.id}`}><Button variant="outline-primary" >See More</Button></Link>
+                                        <Link  to={`/coursedetails/${info.id}`}><Button variant="outline-primary" >See More</Button></Link>
                                     </Card.Body>
                                 </Card>
                             </Col>)

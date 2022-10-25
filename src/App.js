@@ -4,6 +4,7 @@ import LogIn from './components/AccountsDB/LogIn/LogIn';
 import Register from './components/AccountsDB/Register/Register';
 import Main from './components/layout/Main';
 import Blog from './components/Pages/Blog/Blog';
+import CheckOut from './components/Pages/CheckOut/CheckOut';
 import CourseDetails from './components/Pages/CourseDetails/CourseDetails';
 import Courses from './components/Pages/Courses/Courses';
 import Faq from './components/Pages/Faq/Faq';
@@ -42,9 +43,16 @@ function App() {
           element: <LogIn></LogIn>
         },
         {
-          path: '/coursedetails',
+          path: '/coursedetails/:coursedetailsId',
+          loader: async({params}) => {
+            return fetch(`http://localhost:5000/coders-courses/${params.coursedetailsId}`)
+          },
           element: <CourseDetails></CourseDetails>
         },
+        {
+          path: '/checkOut',
+          element: <CheckOut></CheckOut>
+        }
       ]
     },
     {
