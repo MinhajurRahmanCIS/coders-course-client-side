@@ -3,9 +3,11 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
+
 const Courses = () => {
-    const courseInfo = useLoaderData();
+    const courseInfo = useLoaderData([]);
     return (
         <div className="container">
             <div className="row">
@@ -30,24 +32,25 @@ const Courses = () => {
                 <div className="col">
                     <h1 className="text-secondary">Course!</h1>
                     <Row xs={1} md={3} className="g-4">
-                      
-                            <Col>
+                        {
+                            courseInfo.map(info => <Col key={info.id}>
                                 <Card>
-                                    <Card.Img variant="top" src="holder.js/100px160" />
+                                    <Card.Img variant="top" src={info.picture} style={{ height: "250px" }} />
                                     <Card.Body>
-                                        <Card.Title>Card title</Card.Title>
+                                        <Card.Title>{info.title}</Card.Title>
                                         <Card.Text>
-                                            This is a longer card with supporting text below as a natural
-                                            lead-in to additional content. This content is a little bit
-                                            longer.
+                                            <strong>For:</strong> {info.level}
+                                            <br />
+                                            <strong>Duration:</strong> {info.duration}
                                         </Card.Text>
+                                        <Link to={`/coursedetails/${info.id}`}><Button variant="outline-primary" >See More</Button></Link>
                                     </Card.Body>
                                 </Card>
-                            </Col>
-                          
+                            </Col>)
+                        }
+
                     </Row>
                 </div>
-
             </div>
         </div>
     );
