@@ -1,15 +1,15 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+
 import { Link } from 'react-router-dom';
-import { FaGoogle, FaGithub } from "react-icons/fa";
 const Register = () => {
     return (
-        <div className='mx-auto w-50 mt-5'>
+        <div className='container mt-5'>
         <div className='border border-dark p-5'>
         <Form className='container '>
              <h2 className="text-primary">Register!</h2>
-             <Form.Group className="mb-3" controlId="formBasicEmail">
+             <Form.Group className="mb-3" controlId="formBasicName">
                  <Form.Label>Name</Form.Label>
                  <Form.Control type="name" name="name" placeholder="Enter name" required/>
              </Form.Group>

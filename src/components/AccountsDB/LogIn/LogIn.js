@@ -6,7 +6,7 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 const LogIn = () => {
 
     return (
-        <div className='mx-auto w-50 mt-5'>
+        <div className='container mt-5'>
            <div className='border border-dark p-5'>
            <Form className='container '>
                 <h2 className="text-primary">Please Login!</h2>

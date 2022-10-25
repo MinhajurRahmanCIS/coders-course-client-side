@@ -4,6 +4,7 @@ import LogIn from './components/AccountsDB/LogIn/LogIn';
 import Register from './components/AccountsDB/Register/Register';
 import Main from './components/layout/Main';
 import Blog from './components/Pages/Blog/Blog';
+import CourseDetails from './components/Pages/CourseDetails/CourseDetails';
 import Courses from './components/Pages/Courses/Courses';
 import Faq from './components/Pages/Faq/Faq';
 import Home from './components/Pages/Home/Home';
@@ -39,8 +40,15 @@ function App() {
           path: '/login',
           element: <LogIn></LogIn>
         },
+        {
+          path: '/coursedetails',
+          element: <CourseDetails></CourseDetails>
+        },
       ]
-
+    },
+    {
+      path: '*',
+      element: <div className="container text-center"><h1 className="text-danger ">Error 404!!</h1> <p className="text-warning">Something Wrong happen!!!</p></div>
     }
   ])
 
