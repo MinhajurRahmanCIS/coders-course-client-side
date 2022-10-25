@@ -4,11 +4,21 @@ import Form from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 const LogIn = () => {
+    
+    const handelLogInSubmit = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password)
+
+
+    }
 
     return (
         <div className='container mt-5'>
            <div className='border border-dark p-5'>
-           <Form className='container '>
+           <Form onSubmit={handelLogInSubmit} className='container '>
                 <h2 className="text-primary">Please Login!</h2>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email</Form.Label>
