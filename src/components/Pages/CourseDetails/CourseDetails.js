@@ -7,7 +7,7 @@ import { useReactToPrint } from "react-to-print";
 import { GrDocumentPdf } from "react-icons/gr";
 const CourseDetails = () => {
     const courseDetails = useLoaderData();
-    const { title, picture, teacher, totalQuiz, totalClass, info, duration, liveHelpSession } = courseDetails;
+    const { title, picture, teacher, totalQuiz, price, totalClass, info, duration, liveHelpSession } = courseDetails;
     const componentRef = useRef();
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
@@ -25,18 +25,19 @@ const CourseDetails = () => {
                     <Card.Text>
                     <strong>About {title}:</strong> {info}
                     <br />
-                    <br />
-                    • <strong>Total Class: </strong> {totalClass}
+                    • <strong>Price: $</strong>{price}
                     <br />
                     • <strong>Total Quiz: </strong> {totalQuiz}
+                    <br />
+                    • <strong>Total Class: </strong> {totalClass}
                     <br />
                     • <strong>Duration: </strong> {duration}
                     <br />
                     • <strong>Live Help Session: </strong> {liveHelpSession}
                     </Card.Text>
 
-                    <Link className='text-warning' to='/checkOut'><Button variant="warning text-dark rounded-0"><strong>Get Premium Access <AiFillLock></AiFillLock></strong></Button></Link>
-                    <button className="ms-3" onClick={handlePrint} ><GrDocumentPdf></GrDocumentPdf>  Print </button>
+                    <Link className='text-warning' to={`/checkOut/${courseDetails.id}`}><Button variant="warning text-dark rounded-0"><strong>Get Premium Access <AiFillLock></AiFillLock></strong></Button></Link>
+                    <Link className='text-warning'><Button variant="light text-dark rounded-0 ms-3" onClick={handlePrint}><GrDocumentPdf></GrDocumentPdf> Print</Button></Link>
                 </Card.Body>
             </Card>
            </div>

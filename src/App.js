@@ -51,7 +51,10 @@ function App() {
           element: <CourseDetails></CourseDetails>
         },
         {
-          path: '/checkOut',
+          path: '/checkOut/:checkOutId',
+          loader: async({params}) => {
+            return fetch(`http://localhost:5000/coders-courses/${params.checkOutId}`)
+          },
           element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
         }
       ]

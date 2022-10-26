@@ -49,6 +49,8 @@ const Courses = () => {
                                         <Card.Body className="border-top-dark border">
                                             <Card.Title>{info.title}</Card.Title>
                                             <Card.Text>
+                                                <strong>Price: $</strong>{info.price}
+                                                <br />
                                                 <strong>For:</strong> {info.level}
                                                 <br />
                                                 <strong>Duration:</strong> {info.duration}
