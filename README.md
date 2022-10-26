@@ -24,6 +24,6 @@ This is a Quiz System.
 ·         You can also give us feedback.\
 ·         There three way you can login the site.\
 ·         You can print the courses information.\
-·         Also purchasing the premium. But you need to login first or create a account.
+·         Also purchasing the premium. But you need to login first or create an account.
 
 
