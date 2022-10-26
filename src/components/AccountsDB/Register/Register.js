@@ -4,11 +4,11 @@ import Form from 'react-bootstrap/Form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/UserContext';
-import { FormGroup } from 'react-bootstrap';
 import Footer from '../../Pages/Footer/Footer';
 const Register = () => {
+    const navigate = useNavigate();
     const { createUser, setUserNameAndPictureUrl, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
     const handelLogInSubmit = event => {
         event.preventDefault();
@@ -28,6 +28,7 @@ const Register = () => {
                 console.log(user)
                 setUserNameAndPictureUrl(name, url);
                 form.reset();
+                navigate('/');
             })
             .catch(error => {
                 console.error(error)
@@ -36,6 +37,7 @@ const Register = () => {
         setUserNameAndPictureUrl(name, url)
             .then(() => { })
             .catch(error => console.log(error));
+
     }
 
 
@@ -44,6 +46,7 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                navigate('/');
             })
             .catch(error => console.log(error))
     }
@@ -52,6 +55,7 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                navigate('/');
             })
             .catch(error => console.log(error))
     }

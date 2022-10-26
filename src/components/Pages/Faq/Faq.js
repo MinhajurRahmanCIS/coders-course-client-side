@@ -10,7 +10,6 @@ const Faq = () => {
     const handelForm = event => {
         event.preventDefault();
         const form = event.target;
-        const email = form.email.value;
         const text = form.text.value;
         if (text.length > 3) {
             toast.info("Thanks for your feedback!!", {

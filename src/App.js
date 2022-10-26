@@ -24,7 +24,7 @@ function App() {
         },
         {
           path: '/courses',
-          loader: async () => fetch('http://localhost:5000/coders-courses'),
+          loader: async () => fetch('https://coders-server.vercel.app/coders-courses'),
           element: <Courses></Courses>
         },
         {
@@ -46,14 +46,14 @@ function App() {
         {
           path: '/coursedetails/:coursedetailsId',
           loader: async({params}) => {
-            return fetch(`http://localhost:5000/coders-courses/${params.coursedetailsId}`)
+            return fetch(`https://coders-server.vercel.app/coders-courses/${params.coursedetailsId}`)
           },
           element: <CourseDetails></CourseDetails>
         },
         {
           path: '/checkOut/:checkOutId',
           loader: async({params}) => {
-            return fetch(`http://localhost:5000/coders-courses/${params.checkOutId}`)
+            return fetch(`https://coders-server.vercel.app/coders-courses/${params.checkOutId}`)
           },
           element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
         }

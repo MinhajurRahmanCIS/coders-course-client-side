@@ -9,7 +9,7 @@ const Home = () => {
                     <Carousel.Item interval={1000}>
                         <img
                             className="d-block w-100 " style={{ height: "600px" }}
-                            src="https://miro.medium.com/max/1050/1*i3hzpSEiEEMTuWIYviYweQ.png"
+                            src="https://www.oxfordwebstudio.com/user/pages/06.da-li-znate/sta-je-html/sta-je-html.jpg"
                             alt="First slide"
                         />
 
