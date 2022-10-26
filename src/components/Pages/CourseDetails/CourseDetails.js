@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { AiFillLock } from "react-icons/ai";
+import { useReactToPrint } from "react-to-print";
+import { GrDocumentPdf } from "react-icons/gr";
 const CourseDetails = () => {
     const courseDetails = useLoaderData();
     const { title, picture, teacher, totalQuiz, totalClass, info, duration, liveHelpSession } = courseDetails;
+    const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
     return (
-        <div className="container">
+        
+        <div className="container" ref={componentRef} >
             <h2 className="text-secondary text-center my-3 bg-dark text-white p-2">{title}</h2>
            <div>
            <Card>
@@ -27,7 +34,9 @@ const CourseDetails = () => {
                     <br />
                     • <strong>Live Help Session: </strong> {liveHelpSession}
                     </Card.Text>
+
                     <Link className='text-warning' to='/checkOut'><Button variant="warning text-dark rounded-0"><strong>Get Premium Access <AiFillLock></AiFillLock></strong></Button></Link>
+                    <button className="ms-3" onClick={handlePrint} ><GrDocumentPdf></GrDocumentPdf>  Print </button>
                 </Card.Body>
             </Card>
            </div>

@@ -5,8 +5,8 @@ import Header from '../Pages/Header/Header';
 const Main = () => {
     return (
         <div>
-           <Header></Header>
-           <Outlet></Outlet>
+            <Header></Header>
+            <Outlet></Outlet>
         </div>
     );
 };
