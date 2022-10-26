@@ -9,7 +9,7 @@ Project Repository Link For Client site: https://github.com/programming-hero-web
 Project Repository Link For Server site: https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-RkzNew
 
 # Project Info
-This is a Quiz System.
+This is a Programming site where you can not only learn also create a program.
 ## Technologies  –
 1.     The Corders site is develop with react library.  
 2.     For the fastest route I used react router framework.
