@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../../context/UserContext';
 
 const LogIn = () => {
-    const {logIn, signInWithGoogle, signInWithGitHub} = useContext(AuthContext)
+    const {logIn, signInWithGoogle, signInWithGitHub} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
     const handelLogInSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -18,6 +21,7 @@ const LogIn = () => {
           const user = result.user;
           form.reset();
           console.log(user)
+          navigate(from, {replace:true})
         })
         .catch(error => 
           console.error(error))
@@ -28,6 +32,7 @@ const LogIn = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                navigate(from, {replace:true})
             })
             .catch(error => console.log(error))
     }
@@ -36,6 +41,7 @@ const LogIn = () => {
         .then(result => {
             const user = result.user;
             console.log(user)
+            navigate(from, {replace:true})
         })
         .catch(error => console.log(error))
     }

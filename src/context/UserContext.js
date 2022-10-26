@@ -14,12 +14,14 @@ const gitHubProvider = new GithubAuthProvider();
 const auth = getAuth(app)
 
 const UserContext = ({ children }) => {
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
     const createUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
     const logIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
     const logOut = () => {
@@ -37,16 +39,17 @@ const UserContext = ({ children }) => {
             setUser(logInUser);
             setLoading(false);
         })
-        return () => {
-            unsubscribe();
+        return () => { unsubscribe();
         }
     }, [])
 
     const signInWithGoogle = () => {
+        setLoading(true);
         return signInWithPopup(auth, googleProvider);
     }
 
     const signInWithGitHub = () => {
+        setLoading(true);
         return signInWithPopup(auth, gitHubProvider);
     }
 
