@@ -15,7 +15,7 @@ const auth = getAuth(app)
 
 const UserContext = ({ children }) => {
     const [user, setUser] = useState({})
-
+    const [loading, setLoading] = useState(true);
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -35,7 +35,7 @@ const UserContext = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, logInUser => {
             setUser(logInUser);
-
+            setLoading(false);
         })
         return () => {
             unsubscribe();
@@ -50,7 +50,7 @@ const UserContext = ({ children }) => {
         return signInWithPopup(auth, gitHubProvider);
     }
 
-    const authInfo = { user, createUser, logIn, setUserNameAndPictureUrl, logOut, signInWithGoogle, signInWithGitHub }
+    const authInfo = { user, createUser, logIn, setUserNameAndPictureUrl, logOut, signInWithGoogle, signInWithGitHub, loading }
 
     return (
         <div>

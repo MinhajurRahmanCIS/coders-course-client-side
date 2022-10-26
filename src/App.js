@@ -9,6 +9,7 @@ import CourseDetails from './components/Pages/CourseDetails/CourseDetails';
 import Courses from './components/Pages/Courses/Courses';
 import Faq from './components/Pages/Faq/Faq';
 import Home from './components/Pages/Home/Home';
+import PrivateRoute from './routes/PrivateRoute';
 
 function App() {
 
@@ -51,7 +52,7 @@ function App() {
         },
         {
           path: '/checkOut',
-          element: <CheckOut></CheckOut>
+          element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
         }
       ]
     },
