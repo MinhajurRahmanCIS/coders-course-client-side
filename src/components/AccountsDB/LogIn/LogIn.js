@@ -28,7 +28,7 @@ const LogIn = () => {
             .catch(error => {
                 console.error(error)
                 if(error){
-                    toast.error("User Not found!");
+                    toast.error("User's email address doesn't match.");
                 }
             }
                )
