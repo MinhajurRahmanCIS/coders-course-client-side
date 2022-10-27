@@ -5,6 +5,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../../context/UserContext';
 import Footer from '../../Pages/Footer/Footer';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const LogIn = () => {
     const { logIn, signInWithGoogle, signInWithGitHub } = useContext(AuthContext);
@@ -20,11 +22,16 @@ const LogIn = () => {
             .then(result => {
                 const user = result.user;
                 form.reset();
-                console.log(user)
                 navigate(from, { replace: true })
             })
-            .catch(error =>
-                console.error(error))
+            .catch(error => {
+                console.error(error)
+                if(error){
+                    toast.error("User Not found!");
+                }
+            }
+               )
+
     }
 
     const handelGoogleLogin = () => {
@@ -70,6 +77,7 @@ const LogIn = () => {
                         <Button variant="info text-white mt-3" type="submit">
                             Log In
                         </Button>
+                        <ToastContainer />
                     </Form>
                 </div>
             </div>
